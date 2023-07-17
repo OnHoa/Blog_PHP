@@ -18,7 +18,14 @@
 
      <?php
     if (isset($_REQUEST['info'])) {
-    if ($_REQUEST['info'] == "added") {
+        if ($_REQUEST['info'] == "logged-in") {
+        echo '
+        <div id="notification" class="alert alert-success" role="alert">
+            Welcome to your blog!
+        </div>
+        ';
+        }
+    else if ($_REQUEST['info'] == "added") {
         echo '
         <div id="notification" class="alert alert-success" role="alert">
             Post has been added successfully!
@@ -50,6 +57,8 @@
 
         <div class="text-center">
             <a href="create.php" class="btn btn-outline-dark">+ Create a new post</a>
+            <a href="logout.php" type="button" class="btn btn-danger">Logout</a>
+
         </div>
 
         <div class="row">

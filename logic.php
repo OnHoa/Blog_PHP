@@ -1,9 +1,16 @@
 <?php
+  session_start();
   $conn = mysqli_connect("localhost", "root", "", "blog-php");
 
   if(!$conn) {
     echo "<h3 class='alert alert-warning'>Not able establish Database Connection</h3>";    
   }
+
+  if(empty($_SESSION['login'])) {
+    header("Location: login.php");
+    exit();
+  }
+
 
   $sql = "SELECT * FROM data";
   $query = mysqli_query($conn, $sql);

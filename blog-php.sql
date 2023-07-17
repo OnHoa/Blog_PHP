@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2023 at 03:39 PM
+-- Generation Time: Jul 17, 2023 at 07:33 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,6 +43,24 @@ INSERT INTO `data` (`id`, `title`, `content`) VALUES
 (14, 'PHP: Hypertext Preprocessor', 'PHP là viết tắt của cụm từ Personal Home Page nay đã được chuyển thành Hypertext Preprocessor. Hiểu đơn giản thì PHP là một ngôn ngữ lập trình kịch bản (scripting language) đa mục đích. PHP được dùng phổ biến cho việc phát triển các ứng dụng web chạy trên máy chủ. Dó đó, ngôn ngữ lập trình PHP có thể xử lý các chức năng từ phía server để sinh ra mã HTML trên client như thu thập dữ liệu biểu mẫu, sửa đổi cơ sở dữ liệu, quản lý file trên server hay các hoạt động khác. \r\n\r\n'),
 (15, 'Địa lý nước Đức', 'Nước Đức nằm trong Trung Âu, giữa 47°16′15″ và 55°03′33″ vĩ độ bắc và 5°52′01″ và 15°02′37″ kinh độ đông. Về phía bắc Đức có ranh giới với Đan Mạch (có chiều dài 67 km), về phía đông-bắc là Ba Lan (442 km), về phía đông là Séc 811 km), về phía đông nam là Áo (815 km không kể ranh giới trên hồ Bodensee), về phía nam là Thụy Sĩ (316 km, với biên giới của lãnh thổ tách rời Büsingen nhưng không kể ranh giới trên hồ Bodensee), về phía tây nam là Pháp (448 km), về phía tây là Luxembourg (135 km) và Bỉ (156 km) và về phía tây bắc là Hà Lan (567 km).[4] Chiều dài ranh giới tổng cộng là 3.757 km. ');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`username`, `password`) VALUES
+('abc', '123');
+
 --
 -- Indexes for dumped tables
 --
@@ -61,7 +79,7 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
