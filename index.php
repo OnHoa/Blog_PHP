@@ -9,31 +9,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Personal Blog</title>
 </head>
 <body>
      <div class="container mt-5">
 
 
-       <?php 
-         if(isset($_REQUEST['info'])){?>
-         <?php if($_REQUEST['info'] == "added") {?>
-            <div class="alert alert-success" role="alert">
+     <?php
+    if (isset($_REQUEST['info'])) {
+    if ($_REQUEST['info'] == "added") {
+        echo '
+        <div id="notification" class="alert alert-success" role="alert">
             Post has been added successfully!
-            </div>
-        <?php } else if($_REQUEST['info'] == "updated") { ?>
-            <div class="alert alert-success" role="alert">
+        </div>
+        ';
+    } else if ($_REQUEST['info'] == "updated") {
+        echo '
+        <div id="notification" class="alert alert-success" role="alert">
             Post has been updated successfully!
-            </div>
-        <?php } else if($_REQUEST['info'] == "deleted") { ?>
-            <div class="alert alert-danger" role="alert">
+        </div>
+        ';
+    } else if ($_REQUEST['info'] == "deleted") {
+        echo '
+        <div id="notification" class="alert alert-danger" role="alert">
             Post has been deleted successfully!
-            </div>
-            <?php } ?>
-        
-        
-        <?php } ?>
-         
+        </div>
+        ';
+    }
+}
+?>
+
+
+<script>
+    var notification = document.getElementById('notification');
+    setTimeout(function() {
+        notification.style.display = 'none';
+    }, 3000);
+</script>
+
         <div class="text-center">
             <a href="create.php" class="btn btn-outline-dark">+ Create a new post</a>
         </div>
